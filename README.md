@@ -1,12 +1,13 @@
 ![logo](docs/resources/ARU_logo_rectangle.png)
 # Ximea Camera ROS2 Driver
 
-This repo aims provides a generic [ROS2](https://docs.ros.org/en/foxy/index.html) driver for ximea cameras. The repo was adapted from [wavelab's](https://github.com/wavelab/ximea_ros_cam) ROS1 version. And so credit is given to this version for much of the code and convention in this driver. 
+This repo aims provides a generic [ROS2](https://docs.ros.org/en/foxy/index.html) driver for the XIMEA -- MQ022CG-CM camera. The repo was adapted from [wavelab's](https://github.com/wavelab/ximea_ros_cam) ROS1 version. And so credit is given to this version for much of the code and convention in this driver. 
+
+![Slide86](docs/resources/ximea.jpeg)
 
 <hr/> 
 
 ## Prerequisites
-<hr/>
 
 ### ROS2
 
