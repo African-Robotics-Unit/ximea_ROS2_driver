@@ -1,7 +1,7 @@
 ![logo](docs/resources/ARU_logo_rectangle.png)
 # Ximea Camera ROS2 Driver
 
-This repo aims provides a generic [ROS2](https://docs.ros.org/en/foxy/index.html) driver for the XIMEA -- MQ022CG-CM camera. The repo was adapted from [wavelab's](https://github.com/wavelab/ximea_ros_cam) ROS1 version. And so credit is given to this version for much of the code and convention in this driver. 
+This repo aims provides a generic [ROS2](https://docs.ros.org/en/foxy/index.html) driver for the XIMEA MQ022CG-CM camera. The repo was adapted from [wavelab's](https://github.com/wavelab/ximea_ros_cam) ROS1 version. And so credit is given to this version for much of the code and convention in this driver. 
 
 ![Slide86](docs/resources/ximea.jpeg)
 
@@ -48,7 +48,7 @@ sudo gpasswd -a $USER plugdev
 echo 0 > /sys/module/usbcore/parameters/usbfs_memory_mb
 # You can put this line to your bashrc file to apply to every new shell
 ```
-#### set realtime priority by putting the following to ``` /etc/security/limits.conf ```:
+#### Set realtime priority by putting the following to ``` /etc/security/limits.conf ```:
 ```bash
 *               -       rtprio          0
 @realtime       -       rtprio          81
@@ -65,9 +65,22 @@ You may need to reboot your system for some changes to take effect.
 ## Running the ros package
 
 clone this repo to your ros2 workspace source directory:
+
 ```bash
-git clone <somelink>
+$ cd ~/ros2_ws
+$ git clone 
+$ cd ~/ros2_ws/ximea_ROS2_driver
+$ colcon build --packages-select ximea_ros2_cam
 ```
-Modify camera parameters as desired in the [config](config/xiCam_config.yaml) and [launch](launch/xiCam.launch.xml) files, and run the node using the provided launch file or a custom. 
+
+Modify camera parameters as desired in the [config](ximea_ros2_cam/config/xiCam_config.yaml) and [launch](ximea_ros2_cam/launch/xiCam.launch.xml) files, and run the node using the provided launch file or a custom. 
+
+### Launching the camera:
+```bash
+$ ros2 launch ximea_ros2_cam xiCam.launch.xml
+
+# To view the stream
+$ ros2 run rqt_image_view rqt_image_view
+```
 
 <b>NOTE:</b> Ximea API's demosaic color defect correction is not optimized for ARM processors, and so performance may degrade significantly. To avoid this you can instead capture raw 8-bits or 16-bits images (by setting the <i>format</i> parameter to <b>RAW8</b> or <b>RAW16</b> in the config file) and post-process later using the API's [offline processing](https://www.ximea.com/support/wiki/apis/XiAPI_Offline_Processing).
