@@ -23,16 +23,16 @@ Installed and tested on Ubuntu 20.04 LTS.
 
 Download and extract the most recent software package:
 ```bash
-cd ~; mkdir tmp; cd tmp
-wget https://www.ximea.com/downloads/recent/XIMEA_Linux_SP.tgz
+$ cd ~; mkdir tmp; cd tmp
+$ wget https://www.ximea.com/downloads/recent/XIMEA_Linux_SP.tgz
 ```
 ```bash
-tar xzf XIMEA_Linux_SP.tgz
-cd package
+$ tar xzf XIMEA_Linux_SP.tgz
+$ cd package
 ```
 Install the package depending on you camera type
 ```bash
-./install -<type>
+$ ./install -<type>
 ```
 types:
 
@@ -41,11 +41,11 @@ types:
 
 #### Add user to the pugdev group:
 ```bash
-sudo gpasswd -a $USER plugdev
+$ sudo gpasswd -a $USER plugdev
 ```
 #### Set the USB FS memory allocation to infinite for sufficient buffering size for high bandwith USB3.0 streams:
 ```bash
-echo 0 > /sys/module/usbcore/parameters/usbfs_memory_mb
+$ echo 0 > /sys/module/usbcore/parameters/usbfs_memory_mb
 # You can put this line to your bashrc file to apply to every new shell
 ```
 #### Set realtime priority by putting the following to ``` /etc/security/limits.conf ```:
