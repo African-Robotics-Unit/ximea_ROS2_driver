@@ -19,7 +19,7 @@ This repo aims provides a generic [ROS2](https://docs.ros.org/en/foxy/index.html
 
 Installed and tested on Ubuntu 20.04 LTS.
 
-<b> OPTIONAL: </b>For full installation and setup, you could simply run the bash script: [ximea_install.sh](ximea_ros2_cam/docs/installation/ximea_install.sh). Make sure you have the limits.txt file in the same directory. Also checkout the [docker file](docs/docker/XIMEA.Dockerfile) for possible use with ROS2 Humble using the [nvidia-isaac-ros](https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common) docker workspace.
+<b> OPTIONAL: </b>For full installation and setup, you could simply run the bash script: [ximea_install.sh](ximea_ros2_cam/docs/installation/ximea_install.sh). Make sure you have the limits.txt file in the same directory. Also checkout the [docker file](ximea_ros2_cam/docs/docker/XIMEA.Dockerfile) for possible use with ROS2 Humble using the [nvidia-isaac-ros](https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common) docker workspace.
 
 Download and extract the most recent software package:
 ```bash
@@ -57,8 +57,8 @@ $ echo 0 > /sys/module/usbcore/parameters/usbfs_memory_mb
 ```
 then add the user to realtime
 ```bash
-sudo groupadd realtime #if it doesn't exist yet
-sudo gpasswd -a $USER realtime
+$ sudo groupadd realtime #if it doesn't exist yet
+$ sudo gpasswd -a $USER realtime
 ```
 You may need to reboot your system for some changes to take effect.
 
@@ -73,7 +73,7 @@ $ cd ~/ros2_ws/ximea_ROS2_driver
 $ colcon build --packages-select ximea_ros2_cam
 ```
 
-Modify camera parameters as desired in the [config](ximea_ros2_cam/config/xiCam_config.yaml) and [launch](ximea_ros2_cam/launch/xiCam.launch.xml) files, and run the node using the provided launch file or a custom. 
+Modify camera parameters as desired in the [config](ximea_ros2_cam/config/xiCam_config.yaml) and [launch](ximea_ros2_cam/launch/xiCam.launch.xml) files, and run the node using the provided launch file or a custom one. 
 
 ### Launching the camera:
 ```bash
