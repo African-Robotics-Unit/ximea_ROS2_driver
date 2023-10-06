@@ -68,7 +68,7 @@ clone this repo to your ros2 workspace source directory:
 
 ```bash
 $ cd ~/ros2_ws
-$ git clone 
+$ git clone https://github.com/African-Robotics-Unit/ximea_ROS2_driver.git
 $ cd ~/ros2_ws/ximea_ROS2_driver
 $ colcon build --packages-select ximea_ros2_cam
 ```
