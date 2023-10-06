@@ -14,8 +14,7 @@ This repo aims provides a generic [ROS2](https://docs.ros.org/en/foxy/index.html
 - Tested on [ROS2 foxy](https://docs.ros.org/en/foxy/Installation.html)
 
 - Using [eCAL RWM](https://github.com/eclipse-ecal/rmw_ecal) as an alternative to ROS2 DDS implementations showed significant perfomance improvements
-<hr/>
-
+  
 ### Ximea SDK
 
 Installed and tested on Ubuntu 20.04 LTS.
